@@ -8,6 +8,7 @@ import * as Yup from "yup";
 const contactSchemaValidation = Yup.object().shape({
   name: Yup.string().required("Name is Required"),
   email: Yup.string().email("Invalid Email").required("Email is Required"),
+  email: Yup.number().number("Invalid Phone Number").required("Phone Number is Required"),
 });
 
 const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
@@ -42,10 +43,12 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
               ? {
                   name: contact.name,
                   email: contact.email,
+                  number: contact.number,
                 }
               : {
                   name: "",
                   email: "",
+                  number: "",
                 }
           }
           onSubmit={(values) => {
@@ -57,15 +60,22 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
             <div className="flex flex-col gap-1">
               <label htmlFor="name">Name</label>
               <Field name="name" className="h-10 border" />
-              <div className=" text-xs text-red-500">
+              <div className="text-xs text-red-500 ">
                 <ErrorMessage name="name" />
               </div>
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="email">Email</label>
               <Field name="email" className="h-10 border" />
-              <div className=" text-xs text-red-500">
+              <div className="text-xs text-red-500 ">
                 <ErrorMessage name="email" />
+              </div>
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="number">Phone Number</label>
+              <Field name="email" className="h-10 border" />
+              <div className="text-xs text-red-500 ">
+                <ErrorMessage name="number" />
               </div>
             </div>
 

@@ -23,13 +23,14 @@ const ContactCard = ({ contact }) => {
     <>
       <div
         key={contact.id}
-        className="flex items-center justify-between rounded-lg bg-yellow p-2"
+        className="flex items-center justify-between p-2 rounded-lg bg-yellow"
       >
         <div className="flex gap-1">
           <HiOutlineUserCircle className="text-4xl text-orange" />
           <div className="">
             <h2 className="font-medium">{contact.name}</h2>
             <p className="text-sm">{contact.email}</p>
+            <p className="text-sm">{contact.number}</p>
           </div>
         </div>
         <div className="flex text-3xl">
