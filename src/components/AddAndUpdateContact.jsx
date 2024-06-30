@@ -8,7 +8,6 @@ import * as Yup from "yup";
 const contactSchemaValidation = Yup.object().shape({
   name: Yup.string().required("Name is Required"),
   email: Yup.string().email("Invalid Email").required("Email is Required"),
-  email: Yup.number().number("Invalid Phone Number").required("Phone Number is Required"),
 });
 
 const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
@@ -73,7 +72,7 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="number">Phone Number</label>
-              <Field name="email" className="h-10 border" />
+              <Field name="number" className="h-10 border" />
               <div className="text-xs text-red-500 ">
                 <ErrorMessage name="number" />
               </div>
