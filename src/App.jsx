@@ -66,21 +66,21 @@ const App = () => {
       <div className="mx-auto max-w-[370px] px-4">
         <Navbar />
         <div className="flex gap-2">
-          <div className="relative flex flex-grow items-center">
+          <div className="relative flex items-center flex-grow">
             <FiSearch className="absolute ml-1 text-3xl text-white" />
             <input
               onChange={filterContacts}
               type="text"
-              className=" h-10 flex-grow rounded-md border border-white bg-transparent pl-9 text-white"
+              className="flex-grow h-10 text-white bg-transparent border border-white rounded-md  pl-9"
             />
           </div>
 
           <AiFillPlusCircle
             onClick={onOpen}
-            className="cursor-pointer text-5xl text-white"
+            className="text-5xl text-white cursor-pointer"
           />
         </div>
-        <div className="mt-4 flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mt-4">
           {contacts.length <= 0 ? (
             <NotFoundContact />
           ) : (
